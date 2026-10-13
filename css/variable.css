@@ -1,0 +1,31 @@
+/* =========================================================
+ variables.css - Guía de estilos (Custom Properties)
+ Cambiar un valor aquí actualiza todo el sitio
+ ========================================================= */
+:root {
+    /* Paleta de colores */
+    --color-primario: #1B4332;
+    /* verde bosque: header, títulos, botón principal */
+    --color-secundario: #40916C;
+    /* verde medio: hover, enlaces, detalles */
+    --color-acento: #95D5B2;
+    /* verde claro: etiquetas, bordes destacados */
+    --color-fondo: #F8FAF9;
+    /* fondo general */
+    --color-superficie: #FFFFFF;
+    /* tarjetas y formulario */
+    --color-texto: #1F2A24;
+    /* texto principal */
+    --color-texto-suave: #5C6B63;
+    /* texto secundario */
+    --color-error: #C0392B;
+    --color-exito: #2D6A4F;
+    /* Tipografías (máximo 2 familias) */
+    --fuente-titulos: 'Poppins', sans-serif;
+    --fuente-texto: 'Inter', 'Segoe UI', sans-serif;
+    /* Espaciado y forma */
+    --espaciado: 1rem;
+    --radio: 10px;
+    --sombra: 0 4px 14px rgba(0, 0, 0, 0.08);
+    --transicion: 0.3s ease;
+}
