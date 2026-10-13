@@ -6,25 +6,25 @@
 // ---------- 1. Datos de proyectos (array de objetos) ----------
 const proyectos = [
     {
-        titulo: "Sitio Corporativo",
-        descripcion: "Desarrollo web responsivo para una empresa ficticia de servicios.",
-        tecnologias: ["HTML5", "CSS3", "JS"],
+        titulo: "AWS Local",
+        descripcion: "Creación de un ambiente AWS Local con servicios S3, Lambda y API Gateway",
+        tecnologias: ["Terraform", "AWS", "LocalStack", "Docker"],
         imagen: "assets/images/proyecto1.jpg",
-        enlace: "#"
+        enlace: "https://github.com/pablormrz/localstack-terraform"
     },
     {
-        titulo: "Landing Page de Producto",
-        descripcion: "Página de aterrizaje para el lanzamiento de un producto, usando Grid y Flexbox.",
-        tecnologias: ["HTML5", "CSS Grid", "Flexbox"],
+        titulo: "Tunez",
+        descripcion: "Catalogo Musical Web",
+        tecnologias: ["Elixir", "ASH", "Postgres"],
         imagen: "assets/images/proyecto2.jpg",
-        enlace: "#"
+        enlace: "https://github.com/pablormrz/Tunez"
     },
     {
-        titulo: "Lista de Tareas",
-        descripcion: "Aplicación para crear, marcar y eliminar tareas manipulando el DOM.",
-        tecnologias: ["HTML5", "CSS3", "JavaScript"],
+        titulo: "JuegoPreguntas",
+        descripcion: "Juego de Preguntas interactivas, con categorias y puntaje acumulado",
+        tecnologias: ["C#", "Forms"],
         imagen: "assets/images/proyecto3.jpg",
-        enlace: "#"
+        enlace: "https://github.com/pablormrz/JuegoPreguntas"
     }
 ];
 // ---------- 2. Menú hamburguesa ----------
@@ -62,7 +62,7 @@ function crearTarjeta(proyecto) {
  <div class="tecnologias">
  ${proyecto.tecnologias.map(tech => `<span>${tech}</span>`).join('')}
  </div>
- <a href="${proyecto.enlace}" class="btn btn--primario">Ver proyecto</a>
+ <a href="${proyecto.enlace}" class="btn btn--primario" target="_blank" rel="noopener noreferrer">Ver proyecto</a>
  </div>
  `;
     return card;
