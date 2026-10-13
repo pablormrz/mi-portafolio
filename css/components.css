@@ -1,0 +1,312 @@
+/* =========================================================
+ components.css - Componentes reutilizables de la interfaz
+ (logo, menú hamburguesa, botones, tarjetas, formulario,
+ animaciones)
+ ========================================================= */
+/* ---------- Logo ---------- */
+.logo {
+    font-family: var(--fuente-titulos);
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #FFFFFF;
+}
+
+.logo span {
+    color: var(--color-acento);
+}
+
+/* ---------- Enlaces del menú ---------- */
+.nav__enlace {
+    display: block;
+    padding: 0.75rem 5%;
+    color: #FFFFFF;
+    transition: color var(--transicion);
+}
+
+.nav__enlace:hover,
+.nav__enlace:focus {
+    color: var(--color-acento);
+}
+
+/* ---------- Botón hamburguesa ---------- */
+.menu-toggle {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0.25rem;
+}
+
+.menu-toggle__linea {
+    width: 26px;
+    height: 3px;
+    background-color: #FFFFFF;
+    border-radius: 2px;
+    transition: transform var(--transicion), opacity var(--transicion);
+}
+
+/* Las 3 líneas se convierten en una X cuando el menú está abierto */
+.menu-toggle.activo .menu-toggle__linea:nth-child(1) {
+    transform: translateY(8px) rotate(45deg);
+}
+
+.menu-toggle.activo .menu-toggle__linea:nth-child(2) {
+    opacity: 0;
+}
+
+.menu-toggle.activo .menu-toggle__linea:nth-child(3) {
+    transform: translateY(-8px) rotate(-45deg);
+}
+
+/* ---------- Botones ---------- */
+.btn {
+    display: inline-block;
+    padding: 0.75rem 1.5rem;
+    border: 2px solid var(--color-primario);
+    border-radius: var(--radio);
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color var(--transicion), color var(--transicion), transform var(-- transicion);
+}
+
+.btn:hover {
+    transform: translateY(-2px);
+}
+
+.btn--primario {
+    background-color: var(--color-primario);
+    color: #FFFFFF;
+}
+
+.btn--primario:hover {
+    background-color: var(--color-secundario);
+    border-color: var(--color-secundario);
+}
+
+.btn--secundario {
+    background-color: transparent;
+    color: var(--color-primario);
+}
+
+.btn--secundario:hover {
+    background-color: var(--color-primario);
+    color: #FFFFFF;
+}
+
+/* ---------- Hero ---------- */
+.hero__saludo {
+    color: var(--color-secundario);
+    font-weight: 600;
+}
+
+.hero__titulo {
+    font-size: 2rem;
+    margin: 0.5rem 0;
+    animation: aparecer 0.8s ease both;
+}
+
+.hero__subtitulo {
+    color: var(--color-texto-suave);
+    margin-bottom: 1.5rem;
+}
+
+.hero__botones {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1rem;
+}
+
+.hero__imagen {
+    width: 180px;
+    height: 180px;
+    object-fit: cover;
+    border-radius: 50%;
+    border: 5px solid var(--color-acento);
+}
+
+/* ---------- Etiquetas (habilidades y tecnologías) ---------- */
+.habilidades,
+.tecnologias {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin-top: 0.75rem;
+}
+
+.etiqueta,
+.tecnologias span {
+    background-color: var(--color-acento);
+    color: var(--color-primario);
+    padding: 0.25rem 0.75rem;
+    border-radius: 999px;
+    font-size: 0.85rem;
+    font-weight: 600;
+}
+
+.sobre-mi h3 {
+    margin-top: 1.5rem;
+}
+
+/* ---------- Tarjeta de proyecto ---------- */
+.proyecto-card {
+    background-color: var(--color-superficie);
+    border-radius: var(--radio);
+    box-shadow: var(--sombra);
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    transition: transform var(--transicion), box-shadow var(--transicion);
+}
+
+.proyecto-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 10px 24px rgba(0, 0, 0, 0.15);
+}
+
+.proyecto-card img {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+}
+
+.proyecto-card__cuerpo {
+    padding: 1.25rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+    flex: 1;
+}
+
+.proyecto-card .btn {
+    margin-top: auto;
+    align-self: flex-start;
+}
+
+/* ---------- Formulario ---------- */
+.formulario {
+    background-color: var(--color-superficie);
+    padding: 1.5rem;
+    border-radius: var(--radio);
+    box-shadow: var(--sombra);
+    max-width: 700px;
+    margin: 0 auto;
+}
+
+.campo {
+    display: flex;
+    flex-direction: column;
+    gap: 0.35rem;
+    margin-bottom: 1rem;
+}
+
+.campo label {
+    font-weight: 600;
+}
+
+.campo input,
+.campo select,
+.campo textarea {
+    padding: 0.7rem;
+    border: 2px solid #D0D7D3;
+    border-radius: var(--radio);
+    transition: border-color var(--transicion);
+}
+
+.campo input:focus,
+.campo select:focus,
+.campo textarea:focus {
+    outline: none;
+    border-color: var(--color-secundario);
+}
+
+.campo--error input,
+.campo--error select,
+.campo--error textarea {
+    border-color: var(--color-error);
+}
+
+.campo--valido input,
+.campo--valido select,
+.campo--valido textarea {
+    border-color: var(--color-exito);
+}
+
+.mensaje-error {
+    color: var(--color-error);
+    font-size: 0.85rem;
+    min-height: 1.2em;
+}
+
+.form-exito {
+    display: none;
+    margin-top: 1rem;
+    padding: 0.75rem;
+    border-radius: var(--radio);
+    background-color: var(--color-acento);
+    color: var(--color-primario);
+    font-weight: 600;
+}
+
+.form-exito.visible {
+    display: block;
+}
+
+/* ---------- Animaciones ---------- */
+@keyframes aparecer {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Elementos que aparecen al hacer scroll (clase agregada por animations.js) */
+.revelar {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.revelar.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* ---------- Ajustes responsivos de componentes ---------- */
+@media (min-width: 768px) {
+    .menu-toggle {
+        display: none;
+        /* se oculta la hamburguesa en tablet y desktop */
+    }
+
+    .nav__enlace {
+        padding: 0;
+    }
+
+    .hero__botones {
+        justify-content: flex-start;
+    }
+
+    .hero__imagen {
+        width: 240px;
+        height: 240px;
+    }
+}
+
+@media (min-width: 1024px) {
+    .hero__titulo {
+        font-size: 3rem;
+    }
+
+    .hero__imagen {
+        width: 300px;
+        height: 300px;
+    }
+}

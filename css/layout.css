@@ -1,0 +1,160 @@
+/* =========================================================
+ layout.css - Estructura general de la página
+ Enfoque MOBILE FIRST: los estilos base son para celular
+ y las media queries agregan cambios para tablet y desktop
+ ========================================================= */
+/* ---------- Base (móvil, < 768px) ---------- */
+body {
+    font-family: var(--fuente-texto);
+    color: var(--color-texto);
+    background-color: var(--color-fondo);
+    line-height: 1.6;
+}
+
+h1,
+h2,
+h3 {
+    font-family: var(--fuente-titulos);
+    color: var(--color-primario);
+    line-height: 1.2;
+}
+
+.contenedor {
+    width: 90%;
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+/* Header fijo arriba */
+.header {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    background-color: var(--color-primario);
+    box-shadow: var(--sombra);
+}
+
+.header__contenedor {
+    display: flex;
+    /* Flexbox: logo a la izquierda, menú a la derecha */
+    justify-content: space-between;
+    align-items: center;
+    padding: var(--espaciado) 0;
+}
+
+/* Menú en móvil: oculto (altura 0) hasta que se active con JS */
+.nav__lista {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    display: flex;
+    flex-direction: column;
+    background-color: var(--color-primario);
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height var(--transicion);
+}
+
+.nav__lista.activo {
+    max-height: 300px;
+}
+
+/* Hero */
+.hero__contenedor {
+    display: flex;
+    flex-direction: column-reverse;
+    /* en móvil la foto va arriba */
+    align-items: center;
+    gap: 2rem;
+    padding: 3rem 0;
+    text-align: center;
+}
+
+/* Secciones */
+.seccion {
+    padding: 3rem 0;
+}
+
+.seccion--alterna {
+    background-color: var(--color-acento);
+}
+
+.seccion__titulo {
+    font-size: 1.75rem;
+    margin-bottom: 1.5rem;
+    text-align: center;
+}
+
+/* Grid de proyectos: 1 columna en móvil */
+.proyectos-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+}
+
+/* Footer */
+.footer {
+    background-color: var(--color-primario);
+    color: #FFFFFF;
+    padding: 1.5rem 0;
+    font-size: 0.9rem;
+}
+
+.footer__contenedor {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.75rem;
+    text-align: center;
+}
+
+.footer__redes {
+    display: flex;
+    gap: 1rem;
+}
+
+/* ---------- Tablet (>= 768px) ---------- */
+@media (min-width: 768px) {
+    .nav__lista {
+        position: static;
+        /* el menú vuelve a ser horizontal */
+        flex-direction: row;
+        gap: 1.5rem;
+        max-height: none;
+        overflow: visible;
+        background-color: transparent;
+    }
+
+    .hero__contenedor {
+        flex-direction: row;
+        justify-content: space-between;
+        text-align: left;
+    }
+
+    .proyectos-grid {
+        grid-template-columns: repeat(2, 1fr);
+        /* 2 columnas */
+    }
+
+    .footer__contenedor {
+        flex-direction: row;
+        justify-content: space-between;
+    }
+}
+
+/* ---------- Desktop (>= 1024px) ---------- */
+@media (min-width: 1024px) {
+    .seccion {
+        padding: 5rem 0;
+    }
+
+    .seccion__titulo {
+        font-size: 2.25rem;
+    }
+
+    .proyectos-grid {
+        grid-template-columns: repeat(3, 1fr);
+        /* 3 columnas */
+    }
+}
