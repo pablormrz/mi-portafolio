@@ -1,0 +1,147 @@
+index.html
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <!-- ===== METAETIQUETAS ===== -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Portafolio web de Juan Pablo Ramírez Zapata, desarrollador web 
+junior.">
+    <meta name="author" content="Juan Pablo Ramírez Zapata">
+    <meta name="keywords" content="portafolio, desarrollador web, HTML5, CSS3, JavaScript">
+    <title>Juan Pablo Ramírez | Portafolio Web</title>
+    <!-- Tipografías (Google Fonts) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Poppins:wght@600;700&display=swap"
+        rel="stylesheet">
+    <!-- Hojas de estilo (el orden importa: reset > variables > layout > componentes) -->
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/variables.css">
+    <link rel="stylesheet" href="css/layout.css">
+    <link rel="stylesheet" href="css/components.css">
+</head>
+
+<body>
+    <!-- ===== ENCABEZADO Y NAVEGACIÓN ===== -->
+    <header class="header">
+        <div class="contenedor header__contenedor">
+            <a href="#inicio" class="logo">JP<span>.dev</span></a>
+            <!-- Botón hamburguesa (solo visible en móvil) -->
+            <button class="menu-toggle" id="menuToggle" aria-label="Abrir menú" aria-expanded="false"
+                aria-controls="menuPrincipal">
+                <span class="menu-toggle__linea"></span>
+                <span class="menu-toggle__linea"></span>
+                <span class="menu-toggle__linea"></span>
+            </button>
+            <nav class="nav" aria-label="Navegación principal">
+                <ul class="nav__lista" id="menuPrincipal">
+                    <li><a href="#inicio" class="nav__enlace">Inicio</a></li>
+                    <li><a href="#sobre-mi" class="nav__enlace">Sobre mí</a></li>
+                    <li><a href="#proyectos" class="nav__enlace">Proyectos</a></li>
+                    <li><a href="#contacto" class="nav__enlace">Contacto</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    <main>
+        <!-- ===== PRESENTACIÓN PERSONAL (HERO) ===== -->
+        <section class="hero" id="inicio">
+            <div class="contenedor hero__contenedor">
+                <div class="hero__texto">
+                    <p class="hero__saludo">Hola, soy</p>
+                    <h1 class="hero__titulo">Juan Pablo Ramírez Zapata</h1>
+                    <p class="hero__subtitulo">Desarrollador Web Junior</p>
+                    <div class="hero__botones">
+                        <a href="#proyectos" class="btn btn--primario">Ver proyectos</a>
+                        <a href="#contacto" class="btn btn--secundario">Contáctame</a>
+                    </div>
+                </div>
+                <figure class="hero__figura">
+                    <img src="assets/images/perfil.jpg" alt="Foto de perfil de Juan Pablo Ramírez Zapata"
+                        class="hero__imagen">
+                </figure>
+            </div>
+        </section>
+        <!-- ===== SOBRE MÍ ===== -->
+        <section class="seccion" id="sobre-mi">
+            <div class="contenedor">
+                <h2 class="seccion__titulo">Sobre mí</h2>
+                <article class="sobre-mi revelar">
+                    <p>Soy estudiante de ingeniería y consultor de plataformas de integración.
+                        Me interesa construir sitios web claros, rápidos y accesibles.</p>
+                    <h3>Habilidades</h3>
+                    <ul class="habilidades">
+                        <li class="etiqueta">HTML5</li>
+                        <li class="etiqueta">CSS3</li>
+                        <li class="etiqueta">JavaScript</li>
+                        <li class="etiqueta">Git / GitHub</li>
+                        <li class="etiqueta">Diseño responsivo</li>
+                    </ul>
+                </article>
+            </div>
+        </section>
+        <!-- ===== PROYECTOS (las tarjetas se generan con JavaScript) ===== -->
+        <section class="seccion seccion--alterna" id="proyectos">
+            <div class="contenedor">
+                <h2 class="seccion__titulo">Proyectos</h2>
+                <div class="proyectos-grid" id="proyectos-grid">
+                    <!-- Contenido dinámico generado por js/main.js -->
+                </div>
+            </div>
+        </section>
+        <!-- ===== CONTACTO (formulario con validación HTML5 + JS) ===== -->
+        <section class="seccion" id="contacto">
+            <div class="contenedor">
+                <h2 class="seccion__titulo">Contacto</h2>
+                <form class="formulario revelar" id="formContacto" action="#" method="POST">
+                    <div class="campo">
+                        <label for="nombre">Nombre completo</label>
+                        <input type="text" id="nombre" name="nombre" placeholder="Tu nombre" required minlength="3">
+                        <small class="mensaje-error" id="error-nombre" aria-live="polite"></small>
+                    </div>
+                    <div class="campo">
+                        <label for="email">Correo electrónico</label>
+                        <input type="email" id="email" name="email" placeholder="usuario@ejemplo.com" required>
+                        <small class="mensaje-error" id="error-email" aria-live="polite"></small>
+                    </div>
+                    <div class="campo">
+                        <label for="asunto">Asunto</label>
+                        <select id="asunto" name="asunto" required>
+                            <option value="">Seleccione...</option>
+                            <option value="empleo">Oferta de empleo</option>
+                            <option value="proyecto">Propuesta de proyecto</option>
+                            <option value="otro">Otro</option>
+                        </select>
+                        <small class="mensaje-error" id="error-asunto" aria-live="polite"></small>
+                    </div>
+                    <div class="campo campo--completo">
+                        <label for="mensaje">Mensaje</label>
+                        <textarea id="mensaje" name="mensaje" rows="5" placeholder="Escribe tu mensaje" required
+                            minlength="10"></textarea>
+                        <small class="mensaje-error" id="error-mensaje" aria-live="polite"></small>
+                    </div>
+                    <button type="submit" class="btn btn--primario">Enviar mensaje</button>
+                    <p class="form-exito" id="form-exito" role="status"></p>
+                </form>
+            </div>
+        </section>
+    </main>
+    <!-- ===== PIE DE PÁGINA ===== -->
+    <footer class="footer">
+        <div class="contenedor footer__contenedor">
+            <p>&copy; <span id="anio"></span> Juan Pablo Ramírez Zapata. Todos los derechos reservados.</p>
+            <ul class="footer__redes">
+                <li><a href="https://github.com/TU-USUARIO" target="_blank" rel="noopener">GitHub</a></li>
+                <li><a href="https://www.linkedin.com/in/TU-PERFIL" target="_blank" rel="noopener">LinkedIn</a></li>
+            </ul>
+        </div>
+    </footer>
+    <!-- ===== SCRIPTS (main.js va de último porque usa funciones de los otros dos) ===== -->
+    <script src="js/animations.js"></script>
+    <script src="js/form-handler.js"></script>
+    <script src="js/main.js"></script>
+</body>
+
+</html>
