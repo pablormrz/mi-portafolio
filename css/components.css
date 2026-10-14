@@ -15,6 +15,41 @@
     color: var(--color-acento);
 }
 
+/* ---------- Botón de cambio de tema (sol/luna) ---------- */
+.tema-toggle {
+    background: none;
+    border: 2px solid rgba(255, 255, 255, 0.3);
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.2rem;
+    color: #FFFFFF;
+    transition: background-color var(--transicion), border-color var(--transicion), transform var(--transicion);
+    flex-shrink: 0;
+}
+
+.tema-toggle:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+    border-color: rgba(255, 255, 255, 0.6);
+    transform: rotate(20deg) scale(1.1);
+}
+
+/* Icono SVG dentro del botón */
+.tema-toggle__icono {
+    width: 20px;
+    height: 20px;
+    fill: currentColor;
+    transition: transform 0.4s ease;
+}
+
+.tema-toggle:hover .tema-toggle__icono {
+    transform: rotate(15deg);
+}
+
 /* ---------- Enlaces del menú ---------- */
 .nav__enlace {
     display: block;
@@ -212,7 +247,15 @@
     padding: 0.7rem;
     border: 2px solid #D0D7D3;
     border-radius: var(--radio);
-    transition: border-color var(--transicion);
+    background-color: var(--color-superficie);
+    color: var(--color-texto);
+    transition: border-color var(--transicion), background-color var(--transicion), color var(--transicion);
+}
+
+[data-tema="oscuro"] .campo input,
+[data-tema="oscuro"] .campo select,
+[data-tema="oscuro"] .campo textarea {
+    border-color: #2D5A45;
 }
 
 .campo input:focus,

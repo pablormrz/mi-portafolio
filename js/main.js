@@ -76,6 +76,7 @@ function renderizarProyectos() {
 }
 // ---------- 4. Inicialización cuando el HTML ya cargó ----------
 document.addEventListener('DOMContentLoaded', () => {
+    inicializarTema();         // definida en theme-toggle.js
     inicializarMenu();
     renderizarProyectos();
     document.querySelector('#anio').textContent = new Date().getFullYear();

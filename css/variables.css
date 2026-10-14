@@ -29,3 +29,24 @@
     --sombra: 0 4px 14px rgba(0, 0, 0, 0.08);
     --transicion: 0.3s ease;
 }
+
+/* ===== Tema oscuro ===== */
+[data-tema="oscuro"] {
+    --color-primario: #95D5B2;
+    /* verde claro: header, títulos, botón principal */
+    --color-secundario: #B7E4C7;
+    /* verde pastel: hover, enlaces */
+    --color-acento: #1B4332;
+    /* verde bosque oscuro: etiquetas, bordes */
+    --color-fondo: #0D1B16;
+    /* fondo general oscuro */
+    --color-superficie: #142B22;
+    /* tarjetas y formulario oscuros */
+    --color-texto: #E8F5E9;
+    /* texto principal claro */
+    --color-texto-suave: #A5C4B5;
+    /* texto secundario suave */
+    --color-error: #EF5350;
+    --color-exito: #66BB6A;
+    --sombra: 0 4px 14px rgba(0, 0, 0, 0.3);
+}

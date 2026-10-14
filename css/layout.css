@@ -9,6 +9,7 @@ body {
     color: var(--color-texto);
     background-color: var(--color-fondo);
     line-height: 1.6;
+    transition: background-color 0.4s ease, color 0.4s ease;
 }
 
 h1,
@@ -32,6 +33,11 @@ h3 {
     z-index: 100;
     background-color: var(--color-primario);
     box-shadow: var(--sombra);
+    transition: background-color 0.4s ease;
+}
+
+[data-tema="oscuro"] .header {
+    background-color: #0A1612;
 }
 
 .header__contenedor {
@@ -56,6 +62,10 @@ h3 {
     transition: max-height var(--transicion);
 }
 
+[data-tema="oscuro"] .nav__lista {
+    background-color: #0A1612;
+}
+
 .nav__lista.activo {
     max-height: 300px;
 }
@@ -78,6 +88,7 @@ h3 {
 
 .seccion--alterna {
     background-color: var(--color-acento);
+    transition: background-color 0.4s ease;
 }
 
 .seccion__titulo {
@@ -99,6 +110,11 @@ h3 {
     color: #FFFFFF;
     padding: 1.5rem 0;
     font-size: 0.9rem;
+    transition: background-color 0.4s ease;
+}
+
+[data-tema="oscuro"] .footer {
+    background-color: #0A1612;
 }
 
 .footer__contenedor {

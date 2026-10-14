@@ -29,6 +29,10 @@ junior.">
     <header class="header">
         <div class="contenedor header__contenedor">
             <a href="#inicio" class="logo">JP<span>.dev</span></a>
+            <!-- Botón cambio de tema (sol/luna) -->
+            <button class="tema-toggle" id="temaToggle" aria-label="Cambiar tema">
+                <!-- El icono se inyecta con JS -->
+            </button>
             <!-- Botón hamburguesa (solo visible en móvil) -->
             <button class="menu-toggle" id="menuToggle" aria-label="Abrir menú" aria-expanded="false"
                 aria-controls="menuPrincipal">
@@ -143,6 +147,7 @@ junior.">
         </div>
     </footer>
     <!-- ===== SCRIPTS (main.js va de último porque usa funciones de los otros dos) ===== -->
+    <script src="js/theme-toggle.js"></script>
     <script src="js/animations.js"></script>
     <script src="js/form-handler.js"></script>
     <script src="js/main.js"></script>
