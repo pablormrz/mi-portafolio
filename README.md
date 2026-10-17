@@ -1,8 +1,11 @@
 # Mi Portafolio Web Interactivo
 Portafolio personal de **Juan Pablo Ramírez Zapata**, desarrollado como actividad integradora
 de la Unidad 1 del curso de Programación Web (metodología CDIO).
- **Sitio en línea:** https://www.linkedin.com/in/juan-pablo-ramirez-zapata-9481a3285/
- ## Descripción
+
+- **Sitio en línea:** https://www.linkedin.com/in/juan-pablo-ramirez-zapata-9481a3285/
+- **Documento de diseño:** [Documento de diseño en Google Docs](https://docs.google.com/document/d/1Db6niHLuGTepQMyBEqw4hXObEcsF-nmhDrLEhZR6L04/edit?tab=t.0)
+
+## Descripción
 Sitio web responsivo que presenta mi perfil, mis proyectos (cargados dinámicamente con
 JavaScript) y un formulario de contacto con validación en tiempo real (envío simulado).
 ## Tecnologías utilizadas
